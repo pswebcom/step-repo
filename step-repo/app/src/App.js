@@ -1,25 +1,18 @@
-import logo from "./logo.svg";
-import "./App.css";
-
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload my baba.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="steps">
+      <div className="numbers">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </div>
+
+      <p className="buttons">
+        <button style={{ backgroundColor: "#7950f2", color: "#fff" }}>
+          previous
+        </button>
+        <button>next</button>
+      </p>
     </div>
   );
 }
-
-export default App;
