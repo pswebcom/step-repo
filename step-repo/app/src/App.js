@@ -15,8 +15,15 @@ export default function App() {
         Step {step}: {messages[step - 1]}
       </p>
 
+      {/* alert("dada") will give a alert in browser as it is a function call
+ thats why we use callback, () => alert("dada") it will be called later*/}
+
       <p className="buttons">
-        <button style={{ backgroundColor: "#7950f2", color: "#fff" }}>
+        <button
+          style={{ backgroundColor: "#7950f2", color: "#fff" }}
+          onClick={() => alert("dada")}
+          onMouseEnter={() => alert("ddasd")}
+        >
           previous
         </button>
         <button style={{ backgroundColor: "#7950f2", color: "#fff" }}>
