@@ -1,7 +1,24 @@
+import { useState } from "react";
+
 const messages = ["Learn React", "Apply for jobs", "Invest in your new income"];
 
 export default function App() {
-  const step = 1;
+  //!____________________________________
+  //!state
+  //1) add new state using useState()
+  //2) use in jsx
+  //3) update the state with event handler=> WILL GIVE NEW UI
+  //!________________________________________
+
+  const [step, setStep] = useState(1);
+
+  function handleNext() {
+    if (step < 3) setStep(step + 1);
+  }
+
+  function handlePrev() {
+    if (step > 1) setStep(step - 1);
+  }
 
   return (
     <div className="steps">
@@ -21,12 +38,14 @@ export default function App() {
       <p className="buttons">
         <button
           style={{ backgroundColor: "#7950f2", color: "#fff" }}
-          onClick={() => alert("dada")}
-          onMouseEnter={() => alert("ddasd")}
+          onClick={handlePrev}
         >
           previous
         </button>
-        <button style={{ backgroundColor: "#7950f2", color: "#fff" }}>
+        <button
+          style={{ backgroundColor: "#7950f2", color: "#fff" }}
+          onClick={handleNext}
+        >
           next
         </button>{" "}
       </p>
