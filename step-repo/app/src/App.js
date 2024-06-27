@@ -3,12 +3,6 @@ import { useState } from "react";
 const messages = ["Learn React", "Apply for jobs", "Invest in your new income"];
 
 export default function App() {
-  //!____________________________________
-  //!state
-  //1) add new state using useState()
-  //2) use in jsx
-  //3) update the state with event handler=> WILL GIVE NEW UI
-  //!________________________________________
 
   const [step, setStep] = useState(1);
   const [isOpen, setIsOpen] = useState(true);
@@ -23,6 +17,10 @@ export default function App() {
 
   return (
     <>
+      <button className="close" onClick={() => setIsOpen(!isOpen)}>
+        &times;
+      </button>
+
       {isOpen && (
         <div className="steps">
           <div className="numbers">
