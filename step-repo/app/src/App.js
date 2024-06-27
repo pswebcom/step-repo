@@ -3,21 +3,23 @@ import { useState } from "react";
 const messages = ["Learn React", "Apply for jobs", "Invest in your new income"];
 
 export default function App() {
-
   const [step, setStep] = useState(1);
   const [isOpen, setIsOpen] = useState(true);
 
   function handleNext() {
-    if (step < 3) setStep(step + 1);
+    if (step < 3) setStep((currStep) => currStep + 1);
   }
 
   function handlePrev() {
-    if (step > 1) setStep(step - 1);
+    if (step > 1) setStep((currStep) => currStep - 1);
   }
 
   return (
     <>
-      <button className="close" onClick={() => setIsOpen(!isOpen)}>
+    {
+    //**when updating state based on current state value, always use call back 
+    }
+      <button className="close" onClick={() => setIsOpen((is) => !is)}>
         &times;
       </button>
 
